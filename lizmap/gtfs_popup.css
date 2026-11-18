@@ -1,0 +1,71 @@
+/* Popup "prossime partenze" - stile ispirato a Bootstrap Italia.
+   Classi con prefisso tpl- per non scontrarsi con Bootstrap 2 di Lizmap
+   (che ha già .badge, .label, .table...). */
+.tpl-popup {
+  --tpl-primary: #0066CC;
+  --tpl-primary-light: #E6F0FA;
+  --tpl-dark: #17324D;
+  --tpl-text: #191919;
+  --tpl-muted: #5D7083;
+  --tpl-border: #E6E9F2;
+  font-family: "Titillium Web", Geneva, Tahoma, sans-serif;
+  color: var(--tpl-text);
+  font-size: 15px;
+  line-height: 1.4;
+  min-width: 260px;
+  max-width: 420px;
+}
+.tpl-popup * { box-sizing: border-box; }
+
+.tpl-head {
+  display: flex; align-items: center; gap: 10px;
+  padding: 0 0 10px; border-bottom: 2px solid var(--tpl-primary);
+}
+.tpl-ico {
+  flex: 0 0 38px; height: 38px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--tpl-primary); color: #fff;
+}
+.tpl-title { font-size: 18px; font-weight: 700; color: var(--tpl-dark); line-height: 1.2; }
+.tpl-sub   { font-size: 13px; color: var(--tpl-muted); margin-top: 2px; }
+
+.tpl-lines { padding: 10px 0 4px; display: flex; flex-wrap: wrap; gap: 4px; }
+
+.tpl-badge {
+  display: inline-block; min-width: 32px; padding: 2px 7px;
+  border-radius: 4px; font-weight: 700; font-size: 13px;
+  text-align: center; line-height: 1.4; white-space: nowrap;
+  background: var(--tpl-primary); color: #fff;
+}
+
+.tpl-when {
+  font-size: 12px; text-transform: uppercase; letter-spacing: .04em;
+  color: var(--tpl-muted); padding: 10px 0 6px; font-weight: 600;
+}
+.tpl-when strong { color: var(--tpl-dark); }
+
+.tpl-list { border-top: 1px solid var(--tpl-border); }
+.tpl-row {
+  display: flex; align-items: center; gap: 10px;
+  padding: 7px 8px; border-bottom: 1px solid var(--tpl-border);
+  border-left: 4px solid transparent;
+}
+.tpl-time { flex: 0 0 46px; font-weight: 700; font-size: 16px; font-variant-numeric: tabular-nums; color: var(--tpl-dark); }
+.tpl-dest { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.tpl-meta { display: block; color: var(--tpl-muted); font-size: 12px; }
+.tpl-eta  { flex: 0 0 auto; font-size: 13px; color: var(--tpl-muted); white-space: nowrap; }
+
+.tpl-partita { opacity: .55; }
+.tpl-partita .tpl-time { text-decoration: line-through; font-weight: 600; }
+.tpl-prossima {
+  background: var(--tpl-primary-light);
+  border-left-color: var(--tpl-primary) !important;
+}
+.tpl-prossima .tpl-eta {
+  color: #fff; background: var(--tpl-primary);
+  border-radius: 12px; padding: 1px 9px; font-weight: 700;
+}
+
+.tpl-empty { padding: 14px 8px; color: var(--tpl-muted); font-style: italic; }
+.tpl-foot  { font-size: 12px; color: var(--tpl-muted); padding-top: 8px; }
+.tpl-warn  { color: #CC334D; }

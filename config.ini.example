@@ -1,0 +1,31 @@
+; Configurazione gtfs_lizmap - Comune di Montelupo Fiorentino
+
+[database]
+; stringa di connessione libpq (meglio usare ~/.pgpass per la password)
+dsn = host=localhost port=5432 dbname=amm_viab user=postgres
+
+[generale]
+download_dir = download
+; avviso se mancano meno di N giorni alla fine della validità del feed
+giorni_preavviso = 5
+timeout_s = 300
+
+[territorio]
+nome = Comune di Montelupo Fiorentino
+; confine ISTAT 048028 (fonte: ISTAT via openpolis/geojson-italy, CC-BY)
+geojson = territorio/montelupo_fiorentino.geojson
+; in alternativa, usare il limite comunale già presente nel vostro PostGIS
+; (qualsiasi SRID, viene riproiettato):
+; query = SELECT geom FROM cartografia.limiti_amministrativi WHERE cod_istat = '048028'
+; tolleranza in metri attorno al confine (fermate su strade di confine)
+buffer_m = 30
+
+[feed:at]
+nome = Autolinee Toscane
+url = https://regionetoscana.smartregion.toscana.it/mobility/artifacts/gtfs
+
+[feed:trenitalia]
+nome = Trenitalia
+url = https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/4f85393b-357d-443d-8378-65de4198505f/download/trenitalia.gtfs
+; la stazione Montelupo-Capraia è vicina all'Arno, al limite comunale
+buffer_m = 200

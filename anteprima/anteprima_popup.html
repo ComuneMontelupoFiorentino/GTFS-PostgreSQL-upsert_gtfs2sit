@@ -1,0 +1,81 @@
+<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Anteprima popup TPL</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
+<style>/* Popup "prossime partenze" - stile ispirato a Bootstrap Italia.
+   Classi con prefisso tpl- per non scontrarsi con Bootstrap 2 di Lizmap
+   (che ha già .badge, .label, .table...). */
+.tpl-popup {
+  --tpl-primary: #0066CC;
+  --tpl-primary-light: #E6F0FA;
+  --tpl-dark: #17324D;
+  --tpl-text: #191919;
+  --tpl-muted: #5D7083;
+  --tpl-border: #E6E9F2;
+  font-family: "Titillium Web", Geneva, Tahoma, sans-serif;
+  color: var(--tpl-text);
+  font-size: 15px;
+  line-height: 1.4;
+  min-width: 260px;
+  max-width: 420px;
+}
+.tpl-popup * { box-sizing: border-box; }
+
+.tpl-head {
+  display: flex; align-items: center; gap: 10px;
+  padding: 0 0 10px; border-bottom: 2px solid var(--tpl-primary);
+}
+.tpl-ico {
+  flex: 0 0 38px; height: 38px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--tpl-primary); color: #fff;
+}
+.tpl-title { font-size: 18px; font-weight: 700; color: var(--tpl-dark); line-height: 1.2; }
+.tpl-sub   { font-size: 13px; color: var(--tpl-muted); margin-top: 2px; }
+
+.tpl-lines { padding: 10px 0 4px; display: flex; flex-wrap: wrap; gap: 4px; }
+
+.tpl-badge {
+  display: inline-block; min-width: 32px; padding: 2px 7px;
+  border-radius: 4px; font-weight: 700; font-size: 13px;
+  text-align: center; line-height: 1.4; white-space: nowrap;
+  background: var(--tpl-primary); color: #fff;
+}
+
+.tpl-when {
+  font-size: 12px; text-transform: uppercase; letter-spacing: .04em;
+  color: var(--tpl-muted); padding: 10px 0 6px; font-weight: 600;
+}
+.tpl-when strong { color: var(--tpl-dark); }
+
+.tpl-list { border-top: 1px solid var(--tpl-border); }
+.tpl-row {
+  display: flex; align-items: center; gap: 10px;
+  padding: 7px 8px; border-bottom: 1px solid var(--tpl-border);
+  border-left: 4px solid transparent;
+}
+.tpl-time { flex: 0 0 46px; font-weight: 700; font-size: 16px; font-variant-numeric: tabular-nums; color: var(--tpl-dark); }
+.tpl-dest { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.tpl-meta { display: block; color: var(--tpl-muted); font-size: 12px; }
+.tpl-eta  { flex: 0 0 auto; font-size: 13px; color: var(--tpl-muted); white-space: nowrap; }
+
+.tpl-partita { opacity: .55; }
+.tpl-partita .tpl-time { text-decoration: line-through; font-weight: 600; }
+.tpl-prossima {
+  background: var(--tpl-primary-light);
+  border-left-color: var(--tpl-primary) !important;
+}
+.tpl-prossima .tpl-eta {
+  color: #fff; background: var(--tpl-primary);
+  border-radius: 12px; padding: 1px 9px; font-weight: 700;
+}
+
+.tpl-empty { padding: 14px 8px; color: var(--tpl-muted); font-style: italic; }
+.tpl-foot  { font-size: 12px; color: var(--tpl-muted); padding-top: 8px; }
+.tpl-warn  { color: #CC334D; }
+body{background:#eef1f5;padding:16px} .lm{background:#fff;border:1px solid #ccc;padding:12px;margin:0 16px 16px 0;display:inline-block;vertical-align:top;width:380px}
+.cap{font:12px sans-serif;color:#555;margin:0 0 8px}</style></head><body>
+<div class="lm"><p class="cap">Cento Fiori — adesso (gio 29/10)</p><div class="lizmapPopupContent"><div class="tpl-popup"><div class="tpl-head"><span class="tpl-ico"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M4 16c0 .9.4 1.7 1 2.2V20a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1h8v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1.8c.6-.5 1-1.3 1-2.2V6c0-3.5-3.6-4-8-4s-8 .5-8 4v10zm3.5 1a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm9 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm1.5-6H6V6h12v5z"/></svg></span><div><div class="tpl-title">Montelupo Cento Fiori</div><div class="tpl-sub">Palina MLF141 · Autolinee Toscane</div></div></div><div class="tpl-lines"><span class="tpl-badge" style="background:#15AC96;color:#FFFFFF">72</span></div><div class="tpl-when">Partenze attorno alle <strong>15:44</strong> di giovedì 29 ottobre</div><div class="tpl-list"><div class="tpl-row tpl-partita" style="opacity:.55"><span class="tpl-time">14:52</span><span class="tpl-badge" style="background:#15AC96;color:#FFFFFF">72</span><span class="tpl-dest">L-LASTRA A SIGNA FS<small class="tpl-meta"></small></span><span class="tpl-eta">partito</span></div><div class="tpl-row tpl-partita" style="opacity:.55"><span class="tpl-time">15:23</span><span class="tpl-badge" style="background:#15AC96;color:#FFFFFF">72</span><span class="tpl-dest">L-LASTRA A SIGNA FS<small class="tpl-meta"></small></span><span class="tpl-eta">partito</span></div><div class="tpl-row tpl-prossima" style="border-left:4px solid #0066CC;background:#E6F0FA"><span class="tpl-time">16:33</span><span class="tpl-badge" style="background:#15AC96;color:#FFFFFF">72</span><span class="tpl-dest">L-LASTRA A SIGNA FS<small class="tpl-meta"></small></span><span class="tpl-eta">tra 48 min</span></div><div class="tpl-row tpl-in_arrivo"><span class="tpl-time">17:34</span><span class="tpl-badge" style="background:#15AC96;color:#FFFFFF">72</span><span class="tpl-dest">L-LASTRA A SIGNA FS<small class="tpl-meta"></small></span><span class="tpl-eta">tra 1 h 49</span></div><div class="tpl-row tpl-in_arrivo"><span class="tpl-time">18:51</span><span class="tpl-badge" style="background:#15AC96;color:#FFFFFF">72</span><span class="tpl-dest">L-LASTRA A SIGNA FS<small class="tpl-meta"></small></span><span class="tpl-eta">tra 3 h 06</span></div><div class="tpl-row tpl-in_arrivo"><span class="tpl-time">19:53</span><span class="tpl-badge" style="background:#15AC96;color:#FFFFFF">72</span><span class="tpl-dest">L-LASTRA A SIGNA FS<small class="tpl-meta"></small></span><span class="tpl-eta">tra 4 h 08</span></div></div><div class="tpl-foot">Orario programmato, non in tempo reale · dati validi fino al 18/11/2026</div></div></div></div>
+<div class="lm"><p class="cap">Scambiatore — adesso</p><div class="lizmapPopupContent"><div class="tpl-popup"><div class="tpl-head"><span class="tpl-ico"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M4 16c0 .9.4 1.7 1 2.2V20a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1h8v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1.8c.6-.5 1-1.3 1-2.2V6c0-3.5-3.6-4-8-4s-8 .5-8 4v10zm3.5 1a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm9 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm1.5-6H6V6h12v5z"/></svg></span><div><div class="tpl-title">Montelupo Scambiatore</div><div class="tpl-sub">Palina MLF007 · Autolinee Toscane</div></div></div><div class="tpl-lines"><span class="tpl-badge" style="background:#294285;color:#FFFFFF">48</span></div><div class="tpl-when">Partenze attorno alle <strong>15:44</strong> di giovedì 29 ottobre</div><div class="tpl-list"><div class="tpl-row tpl-partita" style="opacity:.55"><span class="tpl-time">14:25</span><span class="tpl-badge" style="background:#294285;color:#FFFFFF">48</span><span class="tpl-dest">EMPOLI Stazione<small class="tpl-meta"></small></span><span class="tpl-eta">partito</span></div><div class="tpl-row tpl-partita" style="opacity:.55"><span class="tpl-time">14:40</span><span class="tpl-badge" style="background:#294285;color:#FFFFFF">48</span><span class="tpl-dest">EMPOLI Stazione<small class="tpl-meta"></small></span><span class="tpl-eta">partito</span></div><div class="tpl-row tpl-prossima" style="border-left:4px solid #0066CC;background:#E6F0FA"><span class="tpl-time">16:13</span><span class="tpl-badge" style="background:#294285;color:#FFFFFF">48</span><span class="tpl-dest">EMPOLI Stazione<small class="tpl-meta"></small></span><span class="tpl-eta">tra 28 min</span></div><div class="tpl-row tpl-in_arrivo"><span class="tpl-time">17:10</span><span class="tpl-badge" style="background:#294285;color:#FFFFFF">48</span><span class="tpl-dest">EMPOLI Stazione<small class="tpl-meta"></small></span><span class="tpl-eta">tra 1 h 25</span></div><div class="tpl-row tpl-in_arrivo"><span class="tpl-time">18:53</span><span class="tpl-badge" style="background:#294285;color:#FFFFFF">48</span><span class="tpl-dest">EMPOLI Stazione<small class="tpl-meta"></small></span><span class="tpl-eta">tra 3 h 08</span></div><div class="tpl-row tpl-in_arrivo"><span class="tpl-time">20:20</span><span class="tpl-badge" style="background:#294285;color:#FFFFFF">48</span><span class="tpl-dest">EMPOLI Stazione<small class="tpl-meta"></small></span><span class="tpl-eta">tra 4 h 35</span></div></div><div class="tpl-foot">Orario programmato, non in tempo reale · dati validi fino al 18/11/2026</div></div></div></div>
+<div class="lm"><p class="cap">Stazione — dom 1/11 ore 00:40 (notte)</p><div class="lizmapPopupContent"><div class="tpl-popup"><div class="tpl-head"><span class="tpl-ico"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M4 16c0 .9.4 1.7 1 2.2V20a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1h8v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1.8c.6-.5 1-1.3 1-2.2V6c0-3.5-3.6-4-8-4s-8 .5-8 4v10zm3.5 1a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm9 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm1.5-6H6V6h12v5z"/></svg></span><div><div class="tpl-title">Montelupo Stazione</div><div class="tpl-sub">Palina MLF210 · Autolinee Toscane</div></div></div><div class="tpl-lines"><span class="tpl-badge" style="background:#294285;color:#FFFFFF">48</span></div><div class="tpl-when">Partenze attorno alle <strong>00:40</strong> di domenica 1 novembre</div><div class="tpl-list"><div class="tpl-row tpl-prossima" style="border-left:4px solid #0066CC;background:#E6F0FA"><span class="tpl-time">08:46</span><span class="tpl-badge" style="background:#294285;color:#FFFFFF">48</span><span class="tpl-dest">EMPOLI Stazione<small class="tpl-meta"></small></span><span class="tpl-eta">tra 8 h 06</span></div><div class="tpl-row tpl-in_arrivo"><span class="tpl-time">10:46</span><span class="tpl-badge" style="background:#294285;color:#FFFFFF">48</span><span class="tpl-dest">EMPOLI Stazione<small class="tpl-meta"></small></span><span class="tpl-eta">tra 10 h 06</span></div></div><div class="tpl-foot">Orario programmato, non in tempo reale · dati validi fino al 18/11/2026</div></div></div></div>
+<div class="lm"><p class="cap">Stazione treni — DATI DI PROVA (il feed Trenitalia non è ancora stato caricato)</p><div class="lizmapPopupContent"><div class="tpl-popup"><div class="tpl-head"><span class="tpl-ico"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 2c-4 0-8 .5-8 4v9.5A3.5 3.5 0 0 0 7.5 19L6 20.5v.5h2.2l2-2h3.6l2 2H18v-.5L16.5 19a3.5 3.5 0 0 0 3.5-3.5V6c0-3.5-4-4-8-4zM7.5 17a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm3.5-7H6V6h5v4zm2 0V6h5v4h-5zm3.5 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg></span><div><div class="tpl-title">Montelupo-Capraia</div><div class="tpl-sub">Trenitalia</div></div></div><div class="tpl-lines"><span class="tpl-badge" style="background:#C2185B;color:#FFFFFF">R</span></div><div class="tpl-when">Partenze attorno alle <strong>15:50</strong> di giovedì 29 ottobre</div><div class="tpl-list"><div class="tpl-row tpl-prossima" style="border-left:4px solid #0066CC;background:#E6F0FA"><span class="tpl-time">15:59</span><span class="tpl-badge" style="background:#C2185B;color:#FFFFFF">R</span><span class="tpl-dest">Pisa Centrale<small class="tpl-meta">treno 3101 · bin. 1</small></span><span class="tpl-eta">tra 9 min</span></div><div class="tpl-row tpl-in_arrivo"><span class="tpl-time">16:45</span><span class="tpl-badge" style="background:#C2185B;color:#FFFFFF">R</span><span class="tpl-dest">Firenze S.M.N.<small class="tpl-meta">treno 3102 · bin. 2</small></span><span class="tpl-eta">tra 55 min</span></div><div class="tpl-row tpl-in_arrivo"><span class="tpl-time">01:09</span><span class="tpl-badge" style="background:#C2185B;color:#FFFFFF">R</span><span class="tpl-dest">Pisa Centrale<small class="tpl-meta">treno 3199 · bin. 1</small></span><span class="tpl-eta">tra 9 h 19</span></div></div><div class="tpl-foot">Orario programmato, non in tempo reale · dati validi fino al 31/12/2026</div></div></div></div>
+</body></html>
